@@ -1,0 +1,25 @@
+----------------------------
+DOWNLOADEN
+----------------------------
+- nodeJS: https://nodejs.org/en/download/
+!!! Kies "npm package manager bij Custom Setup" zodat npm ook geïnstalleerd wordt
+
+----------------------------
+ENVIRONMENT VARIABLE
+----------------------------
+!!! Toevoegen aan PATH-variabele
+
+----------------------------
+TERMINAL
+----------------------------
+package.json aanmaken
+    $ npm init
+
+dependencies installeren
+    $ npm install OF $ npm i
+
+!!! package.json aan .gitignore toeoegen
+
+    $ npm run build
+    $ npm run serve
+    $ npm run test

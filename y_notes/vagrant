@@ -1,0 +1,28 @@
+----------------------------
+DOWNLOADEN
+----------------------------
+- virtual box: https://www.virtualbox.org/
+- vagrant: https://www.vagrantup.com/
+
+----------------------------
+TERMINAL
+----------------------------
+user: vagrant
+password: vagrant
+IP: 192.168.33.22
+URL: http://192.168.33.22/ info.php
+
+Open map met nodige vagrant-files
+    > cd "C:\Users\suzen\OneDrive - PXL\derdeJaar\webExp\vagrant"
+
+Start server
+    > vagrant up
+
+Sluit server
+    > vagrant halt
+
+SSH connectie maken met server
+    > vagrant ssh
+
+Bestand op de server zetten
+    > scp [file] vagrant@192.168.33.22:/var/www/html

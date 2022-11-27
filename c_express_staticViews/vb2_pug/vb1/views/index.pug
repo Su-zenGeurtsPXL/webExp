@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='stylesheets/index_style.css')
+  body
+    h1 Id's
+    - let ids = users.map((user)=>user.id).join(", ");
+    p= ids
+    h1 Names
+    ul
+      each user in users
+        li= user.name
+      img(src=image)
+
+

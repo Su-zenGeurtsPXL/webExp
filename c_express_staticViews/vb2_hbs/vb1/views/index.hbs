@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/index_style.css'>
+        <title>
+            {{#if title}}
+                {{title}}
+            {{else}}
+                Express application
+            {{/if}}
+        </title>
+    </head>
+    <body>
+        <h1>Id's</h1>
+        <p>{{#each users}}{{this.id}}{{#unless @last}},{{/unless}}{{/each}}</p>  
+        <h1>names</h1>
+        <ul>
+            {{#each users}}
+                <li>{{this.name}}</li>
+            {{/each}}
+        </ul>
+        <img src="{{image}}">
+    </body>
+</html>
+
+

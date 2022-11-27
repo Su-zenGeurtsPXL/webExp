@@ -1,0 +1,16 @@
+extends base_template
+
+block header_injection
+  link(rel='stylesheet', href='stylesheets/index_style.css')
+
+block contents
+  h1 Id's
+  - let ids = users.map((user)=>user.id).join(", ");
+  p= ids
+  h1 Names
+  ul
+    each user in users
+      li= user.name.toUpperCase()
+  img(src=image) 
+
+

@@ -1,0 +1,60 @@
+----------------------------
+ALGEMEEN
+----------------------------
+Toon systeemversie
+    > use admin
+    > db.system.version.find({})
+
+----------------------------
+DATABASE
+----------------------------
+Toon huidige database
+    > db
+
+Toon database'en
+    > show databases
+
+Gebruik database "test"
+    > use test
+
+
+----------------------------
+COLLECTIE
+----------------------------
+Toon collecties
+    > show collections
+
+Maak collectie "persons" aan
+    > db.createCollection("persons")
+
+----------------------------
+DOCUMENT
+----------------------------
+Maak document aan
+    > db.persons.insertOne(
+    {
+        name: "Tim",
+        age: 10,
+        contact:
+        {
+            phone: "031/123321",
+            email: "tim@pxl.be"
+        }
+    })
+
+    > db.tasks.insertOne(
+    {
+        todo: "clean your room",
+        time: 20,
+        done: false,
+        personId: new ObjectId("63838faf0f1416f60410def8")
+    })
+
+Toon documenten
+    > db.persons.find()
+
+Update document
+    > 
+
+
+

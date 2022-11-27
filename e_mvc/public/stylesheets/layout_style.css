@@ -1,0 +1,8 @@
+body {
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.errors{
+    border:2px solid red;
+    background-color: #f5aea9;
+}

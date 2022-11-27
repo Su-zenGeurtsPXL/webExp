@@ -1,0 +1,11 @@
+extends ../base_layout
+
+block contents
+  div 
+    |success! 
+    br
+    | id = #{user.id} name =  #{user.name}
+    hr
+    a(href='/users/') users
+
+

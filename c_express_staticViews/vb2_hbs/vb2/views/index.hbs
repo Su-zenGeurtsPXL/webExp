@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{> "title"}}
+        {{> "stylesheet"}}
+    </head>
+    <body>
+        <h1>Id's</h1>
+        <p>{{#each users}}{{this.id}}{{#unless @last}},{{/unless}}{{/each}}</p>  
+        <h1>names</h1>
+        <ul>
+            {{#each users}}
+                <li>{{loud this.name}}</li>
+            {{/each}}
+        </ul>
+        <ul>
+            {{#each users}}
+                <li>{{firstSymbols this.name 2}}</li>
+            {{/each}}
+        </ul>
+        {{#each users}}
+            {{#bold}}{{this.name}}{{/bold}}
+        {{/each}}
+        <img src="{{image}}">
+    </body>
+</html>
+

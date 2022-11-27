@@ -1,0 +1,14 @@
+extends ../base_layout
+
+block contents
+  if error
+    div.errors #{error.message}
+  form(action=url, method='POST')
+    label(for='nameinput') name
+    input(type='text' name='name' id='nameinput')
+    br
+    input(type='submit', value='Submit')
+    br
+    a(href='/users/') users
+
+
