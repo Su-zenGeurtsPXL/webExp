@@ -23,3 +23,29 @@ dependencies installeren
     $ npm run build
     $ npm run serve
     $ npm run test
+
+----------------------------
+NODIG VOOR WEB EXPERT
+----------------------------
+Installeer Nodemon
+    $ npm i nodemon
+
+Installeer Eslint
+    $ npm i elsint
+    $ npm eslint app.js
+    $ npm eslint --fix app.js
+
+Installeer handlebars
+    $ npm i hbs
+
+Installeer PugJS
+    $ npm i pug
+
+Installeer MongoDB
+    $ npm i mongodb
+
+Configuratie in .env bestand
+    $ npm i dotenv
+
+Installeer Mongoose
+    $ npm i mongoose

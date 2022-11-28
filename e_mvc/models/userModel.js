@@ -4,12 +4,11 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true,
             trim: true,
-            lowercase: true,
             minLength:2,
             maxLength:20,
             validate: {
                 validator: function(value) {
-                    return /^[a-zA-Z]+$/.test(value);
+                    return /^[A-G]+$/.test(value);
                 },
                 message: (props) => `${props.value} is not a valid name.`
             }

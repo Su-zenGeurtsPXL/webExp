@@ -1,0 +1,87 @@
+VOORBEELD: WP2
+
+--------------------------
+Stap 1: Configuratiebestanden
+--------------------------
+.env
+package-lock.json
+
+--------------------------
+Stap 2: models (.js)
+--------------------------
+    - [x] roomModel:
+        - [x] location
+
+    - [ ] meldingModel:
+        - [x] title
+        - [x] description
+        - [x] votes
+        - [x] lokaalId
+        - [x] posted (dag en tijd)
+
+--------------------------
+app.js
+--------------------------
+= om requesten door te sturen naar de routers
+
+--------------------------
+routes (.js)
+--------------------------
+    - [x] index (/)
+    - [x] room (/lokalen)
+    - [ ] error (/pageNotFound)
+    - [x] problem (/problemen) todo: correct?
+
+--------------------------
+controllers (.js)
+--------------------------
+    - [x] indexController
+        - [x] index (/)
+
+    - [ ] roomController
+        - [x] showList(/lokalen)
+        - [ ] getRoom(/lokalen/id)
+        - [x] showForm(/lokalen/toevoegen)
+        - [x] makeLokaal(/lokalen/toevoegen)
+
+    - [ ] problemController
+        - [x] (/lokalen/id/problemen)
+        - [ ] (/lokalen/id/problemen/id)
+        - [ ] (/lokalen/id/problemen/toevoegen
+
+--------------------------
+seed.js
+--------------------------
+= voor het plaatsen van items (overschrijft huidige db)
+
+--------------------------
+views
+--------------------------
+- [ ] Index (/)
+    [ ] Knop "meldingen bekijken" om lijst met lokalen te krijgen
+
+- [ ] Lijst met lokalen (/lokalen)
+    - [ ] In de lijst link naar specifiek lokaal (enkel locatie)
+    - [ ] Knop om lokaal toe te voegen
+
+- [ ] Lokaal toevoegen (/lokalen/toevoegen) (gebouw(STRING), verdieping(INT1), nummer(INT2))
+- [ ] Succes voor toevoegen van probleem  (/lokalen/toevoegen)
+
+- [ ] Specifiek lokaal en lijst met bijbehorende problemen (/lokalen/id/problemen)
+    - [ ] In de lijst link naar specifiek probleem (enkel titel en datum)
+    - [ ] Knop om probleem toe te voegen
+
+- [ ] Specifiek probleem
+    - [ ] Beschrijving
+    - [ ] upvote-knop + en - (EXTRA:toggle ofzo, zodat ik het niet meerdere keren kan)
+
+- [ ] Probleem toevoegen (/lokalen/id/problemen/toevoegen)
+
+- [ ] Succes voor toevoegen van probleem  (/lokalen/id/problemen/toevoegen)
+
+- [ ] Error-pagina voor niet-bestaande routes (/pageNotFound)
+
+--------------------------
+public
+--------------------------
+= voor stylesheet

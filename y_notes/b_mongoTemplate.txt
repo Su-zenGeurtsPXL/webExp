@@ -1,0 +1,41 @@
+----------------------------
+VAGRANT
+----------------------------
+> cd "C:\Users\suzen\OneDrive - PXL\derdeJaar\webExp\vagrant"
+> vagrant up
+> vagrant ssh
+    $ mongosh
+    $ exit
+> vagrant halt
+
+
+----------------------------
+MONGO
+----------------------------
+> use person_db
+> db.createCollection(
+    "persons",
+    {
+         validator: { $jsonSchema: {
+             bsonType: "object",
+             required: [ "name", "age" ],
+             properties: {
+                 name: {
+                     bsonType: "string",
+                     description: "must be a string"
+                 },
+                 age: {
+                     bsonType: "number",
+                     minimum: 0,
+                     description: "must be a number >=0"
+                 }
+             }
+         } }
+     } )
+
+db.persons.insertOne({name:"Sofie", age:15})
+db.persons.insertOne({name:"Tamara", age:18})
+db.persons.insertOne({name:"Mark", age:34})
+db.persons.insertOne({name:"Erik", age:12})
+
+db.persons.find( { "contact.phone": "031/123321" } )

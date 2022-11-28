@@ -26,3 +26,9 @@ SSH connectie maken met server
 
 Bestand op de server zetten
     > scp [file] vagrant@192.168.33.22:/var/www/html
+
+Maak backup van database "taskdb"
+    > mongodump -d taskdb -o backup/
+
+Laad backup van database "taskdb" terug
+    > mongorestore --drop --nsInclude 'taskdb.*' backup/

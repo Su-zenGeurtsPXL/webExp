@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.urlencoded({extended: true}));
+// ^ er worden gegevens via POST vanuit een formulier gestuurd deze worden in req.body geplaatst
 app.use("/", indexRouter);
 app.use("/users", userRouter);
 

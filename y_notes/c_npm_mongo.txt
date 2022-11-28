@@ -1,0 +1,127 @@
+-------
+find
+-------
+database.collection("persons").find({});
+    cursor verplaatsen via .next()
+    controle via .hasNext()
+
+-------
+drop
+-------
+database.collection("persons").drop();
+
+database.createCollection("tasks");
+
+-------
+toArray
+-------
+let persons = await database.collection( "persons" ).find( { } ).toArray();
+console.log(persons);
+
+-------
+foreach
+-------
+let persons = await database.collection( "persons" ).find( { } );
+await persons.forEach((person) => {console.log(person);});
+
+-------
+findOne
+-------
+let person = await database.collection( "persons" ).findOne( { } );
+console.log(person);
+
+--------------
+Veld verbergen
+--------------
+let persons = await database.collection( "persons" ).find(
+{ },
+ {
+projection: { _id: 0, name:1 }
+}
+);
+await persons.forEach((person) => {console.log(person);});
+
+-------
+limit
+-------
+let persons = await database.collection( "persons" ).find({ }).limit(5);
+
+-------
+skip(x)
+-------
+let persons = await database.collection( "persons" ).find({ }).skip(10).limit(5);
+
+-------
+sort
+-------
+let persons = await database.collection( "persons" ).find({ }).sort( { age: 1 } );
+let persons = await database.collection( "persons" ).find({ }).sort( { name: 1, age: -1 } );
+
+---------------------
+Comparison operators
+---------------------
+let persons = await database. collection ( "persons" ). find ({ age: { $gt: 6 } });
+let persons = await database. collection ( "persons" ). find ({ name: { $in: ["tim", "Tim"] } });
+
+$eq     =
+$gt     >
+$gte    >=
+$in     match in de array
+$lt     <
+$lte    <=
+$ne     !=
+$nin    no matches in de array
+
+-------
+insertMany
+-------
+let result = await database.collection("persons").insertMany(
+[
+{ name : "Sofie", age: 7 },
+{ name : "Pauline", age: 14 }
+]
+);
+console.log( result );
+
+todo: dia 33 - ...
+-------
+insertOne
+-------
+
+-------
+updateOne
+-------
+
+-------
+updateMany
+-------
+
+-------
+findOneAndUpdate
+-------
+!!! verschil met updateOne: object in result
+
+let result = await database.collection("persons").findOneAndUpdate(
+ { _id: new ObjectId("61694b6fd8ef4c5b701ea5eb") },
+ { $set : {name: "Guy"} },
+ { returnDocument : "after" }
+);
+let person = result.value;
+console.log(person);
+
+-------
+deleteOne/Many
+-------
+
+
+-------
+aggregate
+-------
+    $project
+    $match
+    $group
+    $sort
+    $skip
+    $limit
+    $unwind
+    $lookup

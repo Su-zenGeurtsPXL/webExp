@@ -1,0 +1,3 @@
+todo: dia74 - unique indices
+todo: dia 76 - authentication
+todo: dia 78 - ssl / tls

@@ -44,7 +44,7 @@ Maak document aan
 
     > db.tasks.insertOne(
     {
-        todo: "clean your room",
+        task: "clean your room",
         time: 20,
         done: false,
         personId: new ObjectId("63838faf0f1416f60410def8")
@@ -54,7 +54,32 @@ Toon documenten
     > db.persons.find()
 
 Update document
-    > 
+    > db.persons.updateMany( {name:"Sofie"}, {$set: {age:18} )
 
+----------------------------
+INDICES
+----------------------------
+Maak index aan??
+todo: > db.persons.createIndex( { name: 1 } )
 
+Sorteer documenten
+    > db.persons.find().sort( { name: 1 } )
+    > db.persons.find().sort( { name: -1 } )
+
+todo: @query-time
+
+----------------------------
+UNIQUE INDICES
+----------------------------
+todo: > db.users.createIndex( {username: 1}, { unique: true } )
+
+----------------------------
+NODE ENVIRONMENT
+----------------------------
+Maak variabele "name" aan
+    > let name=/^[tT]/;
+
+Print variabele "name"
+    > console.log(name);
+    > db.persons.find({name})
 
